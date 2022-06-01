@@ -1,5 +1,7 @@
 package com.emre.recyclelistview;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,9 +20,9 @@ public class detay extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        Intent intent = getIntent();
-        University uni = (University) intent.getSerializableExtra("uni");
-        binding.imageView.setImageResource(uni.getLogo());
+        //Intent intent = getIntent();
+        University uni = SelectedImage.getInstance().getUni();//selectedU;//(University) intent.getSerializableExtra("uni");
+        binding.imageView.setImageBitmap(uni.getLogo());
         binding.textView.setText(uni.getName());
         binding.textView2.setText(uni.getCity());
     }

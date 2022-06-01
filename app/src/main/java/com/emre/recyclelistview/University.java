@@ -1,13 +1,15 @@
 package com.emre.recyclelistview;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 public class University implements Serializable {
     private String name;
     private String city;
-    private int logo;
+    private Bitmap logo;
 
-    public University(String name, String city, int logo) {
+    public University(String name, String city, Bitmap logo) {
         this.name = name;
         this.city = city;
         this.logo = logo;
@@ -21,7 +23,7 @@ public class University implements Serializable {
         return city;
     }
 
-    public int getLogo() {
+    public Bitmap getLogo() {
         return logo;
     }
 }

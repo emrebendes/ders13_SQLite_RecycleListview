@@ -1,5 +1,7 @@
 package com.emre.recyclelistview;
 
+
+
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,13 +30,14 @@ public class UniAdapter extends RecyclerView.Adapter<UniHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UniHolder holder, int position) {
-        holder.binding.imageView3.setImageResource(uni.get(position).getLogo());
+        holder.binding.imageView3.setImageBitmap(uni.get(position).getLogo());
         holder.binding.textView3.setText(uni.get(position).getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SelectedImage.getInstance().setUni(uni.get(position));
                 Intent intent = new Intent(view.getContext(),detay.class);
-                intent.putExtra("uni",uni.get(position));
+                //intent.putExtra("uni",uni.get(position));
                 view.getContext().startActivity(intent);
             }
         });
